@@ -1,18 +1,22 @@
 // ===============================================================================
 // DEPENDENCIES
 // We need to include the path package to get the correct file path for our html
+//This is routing for the user(html);
 // ===============================================================================
 var path = require("path");
 
   //html routing get
 module.exports = function(app) {
-  // Below code handles when users "visit" a page.
-
+   
+  
+//when user visits 1 of 2 pages on app
   app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "/../public/survey.html"));
   });
-  //default routing
-  app.use(function(req, res) {
+
+  
+  //default routing is home
+ app.use(function(req, res) {
     res.sendFile(path.join(__dirname, "/../public/home.html"));
   });
 };
